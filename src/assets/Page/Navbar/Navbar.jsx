@@ -29,10 +29,12 @@ const Navbar = () => {
        }
       </ul>
     </div>
+       {/* Logo  */}
     <div className="flex md:ml-10 lg:ml-0  justify-center  items-center">
     <img className=" w-10 lg:w-14" src="https://i.ibb.co/Kyf9ZSH/Logo-removebg-preview.png" alt="" />
     <h1 className="text-xl md:text-4xl  font-ranacho  text-orange-500 drop-shadow-lg  ">Food Rescue Us</h1>
     </div>
+
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -44,7 +46,7 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-  <Link className=" font-popins px-4 py-2 text-white rounded hover:bg-orange-600 bg-orange-500 drop-shadow-lg font-semibold"><a>Login</a></Link>
+  <Link to="/login" className=" font-popins px-4 py-2 text-white rounded hover:bg-orange-600 bg-orange-500 drop-shadow-lg font-semibold"><a>Login</a></Link>
   </div>
 </div>
         </div>

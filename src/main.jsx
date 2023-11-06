@@ -6,19 +6,21 @@ import './index.css'
 
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import AuthProvider from './Auth/AuthProvider.jsx';
+import Login from './assets/User/Login.jsx';
+
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element:<App></App>
+    element:<App></App>,
     // errorElement: <ErrorPage />,
     // loader: rootLoader,
-    // children: [
-    //   {
-    //     path: "contacts/:contactId",
-    //     element: <Contact />,
-    //   },
-    // ],
+    children: [
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+    ],
   },
 ]);
 
