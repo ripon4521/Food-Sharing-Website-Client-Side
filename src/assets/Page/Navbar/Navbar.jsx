@@ -29,9 +29,9 @@ const Navbar = () => {
        }
       </ul>
     </div>
-    <div>
-    {/* <img className="w-20" src="../../../../public/favicon.ico" alt="" /> */}
-    <h1 className="text-3xl md:text-4xl  font-ranacho ml-[5px] text-orange-500 drop-shadow-lg md:ml-10 ">Food Rescue Us</h1>
+    <div className="flex md:ml-10 lg:ml-0  justify-center  items-center">
+    <img className=" w-10 lg:w-14" src="https://i.ibb.co/Kyf9ZSH/Logo-removebg-preview.png" alt="" />
+    <h1 className="text-xl md:text-4xl  font-ranacho  text-orange-500 drop-shadow-lg  ">Food Rescue Us</h1>
     </div>
   </div>
   <div className="navbar-center hidden lg:flex">
