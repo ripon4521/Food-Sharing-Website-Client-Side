@@ -56,9 +56,8 @@ const Login = () => {
             <div className="w-full max-w-sm p-6 m-auto mx-auto bg-white rounded-lg shadow-md ">
             <div className="flex md:ml-10 lg:ml-0  justify-center  items-center">
     <img className=" w-10 lg:w-14" src="https://i.ibb.co/Kyf9ZSH/Logo-removebg-preview.png" alt="" />
-    <h1 className="text-xl md:text-4xl  font-ranacho  text-orange-500 drop-shadow-lg  ">Food Rescue Us</h1>
+    <h1 className="text-xl md:text-4xl  font-ranacho  text-orange-500 drop-shadow-lg font-semibold "> <span className="text-black drop-shadow-lg font-semibold">Food</span> Rescue <span className="text-orange-800 font-semibold">Us</span></h1>
     </div>
-
     <form onSubmit={handleLogin} className="mt-6">
         <div>
             <label name="email"  className="block font-roboto text-orange-500  ">Email</label>
@@ -104,7 +103,7 @@ const Login = () => {
       
     </div>
 
-    <p className="mt-8 text-xs font-light text-center "> Dont have an account? <Link to="/signup" className="font-medium text-orange-500 hover:underline">Create One</Link></p>
+    <p className="mt-8 text-xs font-light text-center "> Dont have an account? <Link to="/register" className="font-medium text-orange-500 hover:underline">Create One</Link></p>
 </div>
 <ToastContainer></ToastContainer>
         </div>
