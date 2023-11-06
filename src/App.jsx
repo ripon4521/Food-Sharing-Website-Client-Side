@@ -1,15 +1,20 @@
 
 
+import { Outlet } from 'react-router-dom'
 import './App.css'
+import Navbar from './assets/Page/Navbar/Navbar'
 
 function App() {
 
 
   return (
     <>
+    <div className='bg-gray-100 '>
+    <Navbar></Navbar>
+    </div>
 
         
-      <h1 className='font-ranacho text-9xl text-gray-500 drop-shadow-lg'>Vite + React</h1>
+      <Outlet></Outlet>
      
     </>
   )
