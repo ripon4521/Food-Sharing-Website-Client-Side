@@ -29,15 +29,15 @@ const Navbar = () => {
       
       {
         user? <div className="flex  flex-col md:flex-col lg:flex-row gap-8 ">
-            <Link className=" font-popins text-white hover:text-orange-500 font-semibold drop-shadow-lg"><a>Home</a></Link>
-        <Link to="/availeableFood" className=" font-popins text-white hover:text-orange-500 font-semibold drop-shadow-lg"><a>Available Foods</a></Link> 
-        <Link to="/addfood"  className=" text-white font-popins hover:text-orange-500 font-semibold drop-shadow-lg"><a>Add Food</a></Link>
-          <Link to='/mangeFood' className=" font-popins text-white hover:text-orange-500 font-semibold drop-shadow-lg"><a>Manage My Foods</a></Link>
-          <Link className=" font-popins text-white hover:text-orange-500 font-semibold drop-shadow-lg"><a>My Food Request</a></Link>
+            <Link className=" font-popins  hover:text-green-500 font-semibold drop-shadow-lg"><a>Home</a></Link>
+        <Link to="/availeableFood" className=" font-popins  hover:text-green-500 font-semibold drop-shadow-lg"><a>Available Foods</a></Link> 
+        <Link to="/addfood"  className=" font-popins hover:text-green-500 font-semibold drop-shadow-lg"><a>Add Food</a></Link>
+          <Link to='/mangeFood' className=" font-popins  hover:text-green-500 font-semibold drop-shadow-lg"><a>Manage My Foods</a></Link>
+          <Link className=" font-popins  hover:text-green-500 font-semibold drop-shadow-lg"><a>My Food Request</a></Link>
         </div>: 
         <div className="flex  flex-col md:flex-col lg:flex-row gap-8 ">
-        <Link className=" font-popins text-white hover:text-orange-500 font-semibold drop-shadow-lg"><a>Home</a></Link>
-        <Link className=" font-popins text-white hover:text-orange-500 font-semibold drop-shadow-lg"><a>Available Foods</a></Link> 
+        <Link className=" font-popins hover:text-green-500 font-semibold drop-shadow-lg"><a>Home</a></Link>
+        <Link className=" font-popins  hover:text-green-500 font-semibold drop-shadow-lg"><a>Available Foods</a></Link> 
        
       </div >
       }
@@ -65,7 +65,7 @@ const Navbar = () => {
        {/* Logo  */}
     <div className="flex md:ml-10 lg:ml-0  justify-center  items-center">
     <img className=" w-10 lg:w-14" src="https://i.ibb.co/Kyf9ZSH/Logo-removebg-preview.png" alt="" />
-    <h1 className="text-xl md:text-4xl  font-ranacho  text-orange-500 drop-shadow-lg font-semibold "> <span className="text-white drop-shadow-lg font-semibold">Food</span> Rescue <span className="text-orange-800 font-semibold">Us</span></h1>
+    <h1 className="text-xl md:text-4xl  font-ranacho  text-green-500 drop-shadow-lg font-semibold "> <span className="text-black drop-shadow-lg font-semibold">Food</span> Rescue <span className="text-green-800 font-semibold">Us</span></h1>
     </div>
 
   </div>
@@ -79,7 +79,7 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-  {/* <Link to="/login" className=" font-popins px-4 py-2 text-white rounded hover:bg-orange-600 bg-orange-500 drop-shadow-lg font-semibold"><a>Login</a></Link> */}
+  {/* <Link to="/login" className=" font-popins px-4 py-2 text-white rounded hover:bg-green-600 bg-green-500 drop-shadow-lg font-semibold"><a>Login</a></Link> */}
   
 
   {
@@ -92,13 +92,13 @@ const Navbar = () => {
   </div>
 
       <button onClick={handleLogout}>
-    <a className="  font-semibold flex items-center justify-center gap-1 bg-orange-500 text-white px-2 py-2 rounded">Logout <span><AiOutlineArrowRight></AiOutlineArrowRight></span></a></button>
+    <a className="  font-semibold flex items-center justify-center gap-1 bg-green-500 text-white px-2 py-2 rounded">Logout <span><AiOutlineArrowRight></AiOutlineArrowRight></span></a></button>
     
     </div> 
     :
     <div>
     <Link to="/login">
-  <a className="  font-semibold flex items-center justify-center gap-1 bg-orange-400 text-white px-2 py-2 rounded">Sign In <span><AiOutlineArrowRight></AiOutlineArrowRight></span></a></Link>
+  <a className="  font-semibold flex items-center justify-center gap-1 bg-green-400 text-white px-2 py-2 rounded">Sign In <span><AiOutlineArrowRight></AiOutlineArrowRight></span></a></Link>
     </div>
   }
 </div>

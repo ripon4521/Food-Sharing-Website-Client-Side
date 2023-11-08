@@ -6,7 +6,7 @@ function App() {
 
 
   return (
-    <div className='bg-black'>
+    <div className=''>
     <div className='border-b'>
       <Navbar></Navbar>
 

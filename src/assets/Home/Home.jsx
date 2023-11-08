@@ -1,12 +1,14 @@
 import {  useEffect, useState } from "react";
-import Navbar from "../Page/Navbar/Navbar";
+// import Navbar from "../Page/Navbar/Navbar";
 import axios from "axios";
 import FeautredsCrads from "../Page/FeautreCards/FeautredsCrads";
 import Banner from "../Page/Banner/Banner";
+// import { useLoaderData } from "react-router-dom";
 
 
 const Home = () => {
     const [data ,setData]=useState([]);
+
 
 
 useEffect(()=>{
@@ -22,7 +24,7 @@ useEffect(()=>{
     })
 
 },[])
-// console.log(data);
+
 const foodSortedQuentity = data.sort((a, b) => b.food_quantity - a.food_quantity);
 // console.log(booksSortedByYearAsc);
 // console.log(data);

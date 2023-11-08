@@ -13,6 +13,8 @@ import AddFood from './assets/Page/AddFood/AddFood.jsx';
 import Private from './Private/Private.jsx';
 import AvaileableFood from './assets/Page/AvailableFood/AvaileableFood.jsx';
 import MangeFood from './assets/Page/MangeFood/MangeFood.jsx';
+import UpdateFood from './assets/Page/UpdateFood/UpdateFood.jsx';
+import ViewDetiails from './assets/Page/ViewDetails/ViewDetiails.jsx';
 
 
 const router = createBrowserRouter([
@@ -24,7 +26,13 @@ const router = createBrowserRouter([
     children: [
       {
         path:"/",
-        element:<Home></Home>
+        element:<Home></Home>,
+  
+      },{
+        path:"/viewDetails/:_id",
+        element:<ViewDetiails></ViewDetiails>,
+        loader:({params})=>fetch(`http://localhost:5000/foods/${params._id}`)
+        
       },
       {
         path: "/login",
@@ -43,6 +51,10 @@ const router = createBrowserRouter([
       },{
         path:"/mangeFood",
         element:<MangeFood></MangeFood>
+      },{
+        path:"/updateFood",
+        element:<UpdateFood></UpdateFood>,
+       
       }
      
         

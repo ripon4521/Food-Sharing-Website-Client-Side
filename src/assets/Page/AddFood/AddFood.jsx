@@ -81,16 +81,16 @@ axios.post('http://localhost:5000/foods',newProduct)
 
 
     return (
-        <div className='bg-black h-screen'>
+        <div className=' h-screen'>
    
 <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14  mx-auto">
   <div className="max-w-xl mx-auto">
     <div className="text-center">
-      <h1 className="text-3xl font-bold drop-shadow-lg mt-10 md:text-7xl  font-ranacho text-orange-500 dark:text-orange">
+      <h1 className="text-3xl font-bold drop-shadow-lg mt-10 md:text-7xl  font-ranacho text-green-500 dark:text-green">
      Add Your Food here !
       </h1>
 
-      <p className="mt-1 text-orange-600 dark:text-orange-400">
+      <p className="mt-1 text-green-600 dark:text-green-400">
   
       </p>
     </div>
@@ -103,14 +103,14 @@ axios.post('http://localhost:5000/foods',newProduct)
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
 
             <div>
-              <label className="block drop-shadow-lg text-orange-500 mb-2 font-roboto ">Food name</label>
-              <input required name='food_name' type="text" className="block w-full py-3 font-roboto  border rounded-lg px-11 focus:border-orange-400 dark:focus:border-orange-300 focus:ring-orange-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Write product name here"/>
+              <label className="block drop-shadow-lg text-green-500 mb-2 font-roboto ">Food name</label>
+              <input required name='food_name' type="text" className="block w-full py-3 font-roboto  border rounded-lg px-11 focus:border-green-400 dark:focus:border-green-300 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Write product name here"/>
             </div>
 
 
             <div>
-              <label  className="block drop-shadow-lg text-orange-500 mb-2 font-roboto">Food Quantity</label>
-              <input type="text" name='food_quantity' className="block w-full py-3 font-roboto  border rounded-lg px-11 focus:border-orange-400 dark:focus:border-orange-300 focus:ring-orange-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Write brand name here"/>
+              <label  className="block drop-shadow-lg text-green-500 mb-2 font-roboto">Food Quantity</label>
+              <input type="text" name='food_quantity' className="block w-full py-3 font-roboto  border rounded-lg px-11 focus:border-green-400 dark:focus:border-green-300 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Write brand name here"/>
             </div>
 
           </div>
@@ -118,12 +118,12 @@ axios.post('http://localhost:5000/foods',newProduct)
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
             <div>
-              <label className="block drop-shadow-lg text-orange-500 mb-2 font-roboto ">Pickup Location</label>
-              <input name='pickup_location' type="text" className="block w-full py-3 font-roboto  border rounded-lg px-11 focus:border-orange-400 dark:focus:border-orange-300 focus:ring-orange-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Write product type here"/>
+              <label className="block drop-shadow-lg text-green-500 mb-2 font-roboto ">Pickup Location</label>
+              <input name='pickup_location' type="text" className="block w-full py-3 font-roboto  border rounded-lg px-11 focus:border-green-400 dark:focus:border-green-300 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Write product type here"/>
             </div>
             <div>
-              <label  className="block drop-shadow-lg text-orange-500 mb-2 font-roboto">Food Image Link</label>
-              <input name='food_image' type="text" className="block w-full  py-3 font-roboto  border rounded-lg px-11 focus:border-orange-400 dark:focus:border-orange-300 focus:ring-orange-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Write product photo url here"/>
+              <label  className="block drop-shadow-lg text-green-500 mb-2 font-roboto">Food Image Link</label>
+              <input name='food_image' type="text" className="block w-full  py-3 font-roboto  border rounded-lg px-11 focus:border-green-400 dark:focus:border-green-300 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Write product photo url here"/>
             </div>
         
           </div>
@@ -143,13 +143,13 @@ axios.post('http://localhost:5000/foods',newProduct)
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
             <div>
-              <label className="block drop-shadow-lg text-orange-500 mb-2 font-roboto ">Expired Date</label>
-              <input name='expired_date' type="date" className="block w-full py-3 font-roboto  border rounded-lg px-11 focus:border-orange-400 dark:focus:border-orange-300 focus:ring-orange-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Write product price here"/>
+              <label className="block drop-shadow-lg text-green-500 mb-2 font-roboto ">Expired Date</label>
+              <input name='expired_date' type="date" className="block w-full py-3 font-roboto  border rounded-lg px-11 focus:border-green-400 dark:focus:border-green-300 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Write product price here"/>
             </div>
             
             <div>
-              <label  className="block drop-shadow-lg text-orange-500 mb-2 font-roboto">Food Status</label>
-              <input defaultValue={value} name='status' type="text" className="block w-full py-3 font-roboto  border rounded-lg px-11 focus:border-orange-400 dark:focus:border-orange-300 focus:ring-orange-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Write product rating here"/>
+              <label  className="block drop-shadow-lg text-green-500 mb-2 font-roboto">Food Status</label>
+              <input defaultValue={value} name='status' type="text" className="block w-full py-3 font-roboto  border rounded-lg px-11 focus:border-green-400 dark:focus:border-green-300 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Write product rating here"/>
             </div>
 
            
@@ -161,8 +161,8 @@ axios.post('http://localhost:5000/foods',newProduct)
 
 <div>
 <div>
-              <label  className="block drop-shadow-lg text-orange-500 mb-2 font-roboto">Additional Notes</label>
-              <input name='additional_notes' type="text" className="block h-20 w-full py-3 font-roboto  border rounded-lg px-11 focus:border-orange-400 dark:focus:border-orange-300 focus:ring-orange-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Write product description"/>
+              <label  className="block drop-shadow-lg text-green-500 mb-2 font-roboto">Additional Notes</label>
+              <input name='additional_notes' type="text" className="block h-20 w-full py-3 font-roboto  border rounded-lg px-11 focus:border-green-400 dark:focus:border-green-300 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Write product description"/>
             </div>
 </div>
 
@@ -170,7 +170,7 @@ axios.post('http://localhost:5000/foods',newProduct)
       
 
         <div className="mt-6 grid">
-          <button type="submit" className="inline-flex justify-center items-center gap-x-3 text-center bg-orange-600 hover:bg-orange-700 border border-transparent text-sm lg:text-base text-white font-roboto drop-shadow-lg font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-offset-2 focus:ring-offset-white transition py-3 px-4 dark:focus:ring-offset-orange-800">Add Food</button>
+          <button type="submit" className="inline-flex justify-center items-center gap-x-3 text-center bg-green-600 hover:bg-green-700 border border-transparent text-sm lg:text-base text-white font-roboto drop-shadow-lg font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2 focus:ring-offset-white transition py-3 px-4 dark:focus:ring-offset-green-800">Add Food</button>
         </div>
 
       
