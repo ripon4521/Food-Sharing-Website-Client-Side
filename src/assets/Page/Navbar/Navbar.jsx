@@ -1,22 +1,54 @@
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../Auth/AuthProvider";
+import { useContext } from "react";
+import { toast } from "react-toastify";
+import { AiOutlineArrowRight  } from 'react-icons/ai';
 
+const userImg ='https://i.ibb.co/wYvvGyV/user-icon-image-placeholder-removebg-preview.png'
 
 const Navbar = () => {
 
+    const {user , logOut} = useContext(AuthContext);
+
+
+    const handleLogout =()=>{
+        logOut()
+        .then(result =>{
+            console.log(result);
+            toast.success("Logout Succesfull")
+          
+            
+        })
+        .catch(error => console.log(error.message))
+      }
+    
+
     const navlink = <div className="flex  flex-col md:flex-col lg:flex-row gap-8 ">
 
-      <Link className=" font-popins hover:text-orange-500 font-semibold drop-shadow-lg"><a>Home</a></Link>
-      <Link className=" font-popins hover:text-orange-500 font-semibold drop-shadow-lg"><a>Available Foods</a></Link>
-      <Link className=" font-popins hover:text-orange-500 font-semibold drop-shadow-lg"><a>Add Food</a></Link>
-      <Link className=" font-popins hover:text-orange-500 font-semibold drop-shadow-lg"><a>Manage My Foods</a></Link>
-      <Link className=" font-popins hover:text-orange-500 font-semibold drop-shadow-lg"><a>My Food Request</a></Link>
+      
+      {
+        user? <div className="flex  flex-col md:flex-col lg:flex-row gap-8 ">
+            <Link className=" font-popins hover:text-orange-500 font-semibold drop-shadow-lg"><a>Home</a></Link>
+        <Link className=" font-popins hover:text-orange-500 font-semibold drop-shadow-lg"><a>Available Foods</a></Link> 
+        <Link to="/addfood" className=" font-popins hover:text-orange-500 font-semibold drop-shadow-lg"><a>Add Food</a></Link>
+          <Link className=" font-popins hover:text-orange-500 font-semibold drop-shadow-lg"><a>Manage My Foods</a></Link>
+          <Link className=" font-popins hover:text-orange-500 font-semibold drop-shadow-lg"><a>My Food Request</a></Link>
+        </div>: 
+        <div className="flex  flex-col md:flex-col lg:flex-row gap-8 ">
+        <Link className=" font-popins hover:text-orange-500 font-semibold drop-shadow-lg"><a>Home</a></Link>
+        <Link className=" font-popins hover:text-orange-500 font-semibold drop-shadow-lg"><a>Available Foods</a></Link> 
+       
+      </div >
+      }
+     
     
      
 
     </div>
 
     return (
-        <div className="container mx-auto mt-2 ">
+       <div className="">
+         <div className=" container mx-auto  ">
             <div className="navbar ">
   <div className="navbar-start">
     <div className="dropdown">
@@ -46,10 +78,35 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-  <Link to="/login" className=" font-popins px-4 py-2 text-white rounded hover:bg-orange-600 bg-orange-500 drop-shadow-lg font-semibold"><a>Login</a></Link>
+  {/* <Link to="/login" className=" font-popins px-4 py-2 text-white rounded hover:bg-orange-600 bg-orange-500 drop-shadow-lg font-semibold"><a>Login</a></Link> */}
+  
+
+  {
+    user ?
+     <div className="flex gap-2">
+      <div >
+    {
+      user ? <img className="w-12 border-4 rounded-full" src={user.photoURL? user.photoURL : userImg} alt="" /> : <img className="w-10 mr-5" src={userImg} alt="" />
+    }
   </div>
+
+      <button onClick={handleLogout}>
+    <a className="  font-semibold flex items-center justify-center gap-1 bg-orange-500 text-white px-2 py-2 rounded">Logout <span><AiOutlineArrowRight></AiOutlineArrowRight></span></a></button>
+    
+    </div> 
+    :
+    <div>
+    <Link to="/login">
+  <a className="  font-semibold flex items-center justify-center gap-1 bg-orange-400 text-white px-2 py-2 rounded">Sign In <span><AiOutlineArrowRight></AiOutlineArrowRight></span></a></Link>
+    </div>
+  }
+</div>
+
+
+
 </div>
         </div>
+       </div>
     );
 };
 

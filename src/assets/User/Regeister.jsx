@@ -37,7 +37,7 @@ return
         sighnUp(email,password)
         .then(result=>{
             console.log(result);
-            // nvaigate(location?.state? location.state : "/")
+            nvaigate(location?.state? location.state : "/")
      toast.success("Succesfuly Created your Acoount.")
      
         })
