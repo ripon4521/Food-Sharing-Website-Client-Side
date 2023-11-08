@@ -1,7 +1,7 @@
 
 import Swal from 'sweetalert2';
 
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { AuthContext } from "../../../Auth/AuthProvider";
 import axios from "axios";
 
@@ -40,7 +40,7 @@ const AddFood = () => {
     }
         // const DimgLink = form.desc.value;
 
-
+  
 
 const newProduct = {
     

@@ -12,6 +12,7 @@ import Home from './assets/Home/Home.jsx';
 import AddFood from './assets/Page/AddFood/AddFood.jsx';
 import Private from './Private/Private.jsx';
 import AvaileableFood from './assets/Page/AvailableFood/AvaileableFood.jsx';
+import MangeFood from './assets/Page/MangeFood/MangeFood.jsx';
 
 
 const router = createBrowserRouter([
@@ -38,7 +39,10 @@ const router = createBrowserRouter([
         element:<Private><AddFood></AddFood></Private>
       },{
         path:"/availeableFood",
-        element:<AvaileableFood></AvaileableFood>
+        element:<Private><AvaileableFood></AvaileableFood></Private>
+      },{
+        path:"/mangeFood",
+        element:<MangeFood></MangeFood>
       }
      
         

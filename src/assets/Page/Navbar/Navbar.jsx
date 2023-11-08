@@ -3,7 +3,7 @@ import { AuthContext } from "../../../Auth/AuthProvider";
 import { useContext } from "react";
 import { toast } from "react-toastify";
 import { AiOutlineArrowRight  } from 'react-icons/ai';
-import AddFood from "../AddFood/AddFood";
+// import AddFood from "../AddFood/AddFood";
 
 const userImg ='https://i.ibb.co/wYvvGyV/user-icon-image-placeholder-removebg-preview.png'
 
@@ -32,7 +32,7 @@ const Navbar = () => {
             <Link className=" font-popins text-white hover:text-orange-500 font-semibold drop-shadow-lg"><a>Home</a></Link>
         <Link to="/availeableFood" className=" font-popins text-white hover:text-orange-500 font-semibold drop-shadow-lg"><a>Available Foods</a></Link> 
         <Link to="/addfood"  className=" text-white font-popins hover:text-orange-500 font-semibold drop-shadow-lg"><a>Add Food</a></Link>
-          <Link className=" font-popins text-white hover:text-orange-500 font-semibold drop-shadow-lg"><a>Manage My Foods</a></Link>
+          <Link to='/mangeFood' className=" font-popins text-white hover:text-orange-500 font-semibold drop-shadow-lg"><a>Manage My Foods</a></Link>
           <Link className=" font-popins text-white hover:text-orange-500 font-semibold drop-shadow-lg"><a>My Food Request</a></Link>
         </div>: 
         <div className="flex  flex-col md:flex-col lg:flex-row gap-8 ">
