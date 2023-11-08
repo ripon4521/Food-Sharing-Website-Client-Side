@@ -63,12 +63,12 @@ return
 
     return (
         <div>
-            <section className="   mx-auto   " >
-    <div className="container flex items-center  justify-center min-h-screen px-6 mx-auto">
+            <section className="  mx-auto   " >
+    <div className="container flex items-center justify-center min-h-screen px-6 mx-auto">
         <form onSubmit={handleSubmitBtn} className="w-full max-w-md">
         <div className="flex md:ml-10 lg:ml-0  justify-center  items-center">
     <img className=" w-10 lg:w-14" src="https://i.ibb.co/Kyf9ZSH/Logo-removebg-preview.png" alt="" />
-    <h1 className="text-xl md:text-4xl  font-ranacho  text-orange-500 drop-shadow-lg font-semibold "> <span className="text-black drop-shadow-lg font-semibold">Food</span> Rescue <span className="text-orange-800 font-semibold">Us</span></h1>
+    <h1 className="text-xl md:text-4xl  font-ranacho  text-orange-500 drop-shadow-lg font-semibold "> <span className="text-white drop-shadow-lg font-semibold">Food</span> Rescue <span className="text-orange-800 font-semibold">Us</span></h1>
     </div>
             <div className="flex items-center justify-center mt-6">
               

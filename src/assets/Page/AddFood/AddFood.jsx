@@ -1,13 +1,22 @@
 
-// import Swal from 'sweetalert2';
+import Swal from 'sweetalert2';
 
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../../../Auth/AuthProvider";
+import axios from "axios";
+
+
 
 const AddFood = () => {
+
+
+
     const value = 'Available'
-    const {user}=useContext(AuthContext)
-    console.log(user);
+    const {user}=useContext(AuthContext);
+    // console.log(user);
+    const name =user?.displayName;
+    const image =user?.photoURL;
+    const email =user?.emal;
 
 
 // const name=user.disp
@@ -22,11 +31,17 @@ const AddFood = () => {
         const additional_notes = form.additional_notes.value;
         const expired_date = form.expired_date.value;
         const food_image = form.food_image.value;
-        const image=form.image.value;
+        // const image=form.image.value;
         const donator={
-            image
-        }
+            image,  
+        name,
+        email
+
+    }
         // const DimgLink = form.desc.value;
+
+
+
 const newProduct = {
     
 
@@ -38,47 +53,41 @@ const newProduct = {
     food_image,
     donator
 }
-// console.log(newProduct);
+console.log(newProduct);
 
-//     fetch('https://brand-shop-server-qpd4wio2i-dev-ripons-projects.vercel.app/brand',{
-//         method:"POST",
-//         headers:{
-//             "content-type":"application/json"
-//         },
-//         body:JSON.stringify(newProduct)
-  
-//     })
-    
-//     .then(res=>res.json())
-//     .then(data => {
-//         console.log(data)
-//         if (data.insertedId) {
-//           Swal.fire({
-//             position: 'top-end',
-//             icon: 'success',
-//             title: 'Your product has been added!',
-//             showConfirmButton: false,
-//             timer: 1500
-//           })
+axios.post('http://localhost:5000/foods',newProduct)
+.then(res=> {
+  console.log(res);
 
-           
-//         }
-//     })
+  Swal.fire({
+    position: 'top-end',
+    icon: 'success',
+    title: 'Your Food Add SuccesFully !',
+    showConfirmButton: false,
+    timer: 1500
+  })
+})
+.catch(err=>{
+  console.log(err);
+})
 
-// console.log(newProduct);
-   
+
+
+
 
     }
 
+    
+
 
     return (
-        <div className='bg-gray-100 h-screen'>
+        <div className='bg-black h-screen'>
    
 <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14  mx-auto">
   <div className="max-w-xl mx-auto">
     <div className="text-center">
-      <h1 className="text-3xl font-bold drop-shadow-lg mt-10  text-orange-500 sm:text-4xl dark:text-orange">
-     Add Your Product here !
+      <h1 className="text-3xl font-bold drop-shadow-lg mt-10 md:text-7xl  font-ranacho text-orange-500 dark:text-orange">
+     Add Your Food here !
       </h1>
 
       <p className="mt-1 text-orange-600 dark:text-orange-400">
@@ -112,11 +121,11 @@ const newProduct = {
               <label className="block drop-shadow-lg text-orange-500 mb-2 font-roboto ">Pickup Location</label>
               <input name='pickup_location' type="text" className="block w-full py-3 font-roboto  border rounded-lg px-11 focus:border-orange-400 dark:focus:border-orange-300 focus:ring-orange-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Write product type here"/>
             </div>
-
             <div>
-              <label  className="block drop-shadow-lg text-orange-500 mb-2 font-roboto">Donator Name</label>
-              <input name='Dname' type="text" className="block w-full py-3 font-roboto  border rounded-lg px-11 focus:border-orange-400 dark:focus:border-orange-300 focus:ring-orange-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Write product rating here"/>
+              <label  className="block drop-shadow-lg text-orange-500 mb-2 font-roboto">Food Image Link</label>
+              <input name='food_image' type="text" className="block w-full  py-3 font-roboto  border rounded-lg px-11 focus:border-orange-400 dark:focus:border-orange-300 focus:ring-orange-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Write product photo url here"/>
             </div>
+        
           </div>
 
 
@@ -130,10 +139,7 @@ const newProduct = {
           
 
      
-          <div>
-              <label  className="block drop-shadow-lg text-orange-500 mb-2 font-roboto">Food Image Link</label>
-              <input name='food_image' type="text" className="block w-full  py-3 font-roboto  border rounded-lg px-11 focus:border-orange-400 dark:focus:border-orange-300 focus:ring-orange-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Write product photo url here"/>
-            </div>
+      
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
             <div>

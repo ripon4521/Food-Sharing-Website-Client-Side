@@ -40,7 +40,7 @@ const foodSortedQuentity = data.sort((a, b) => b.food_quantity - a.food_quantity
            
 
 {
-    foodSortedQuentity.map((food)=>{
+    foodSortedQuentity.slice(0,6).map((food)=>{
   return <FeautredsCrads food={food} key={food._id}></FeautredsCrads>
     })
 }

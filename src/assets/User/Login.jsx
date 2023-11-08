@@ -54,11 +54,11 @@ const Login = () => {
 
 
     return (
-        <div className="mt-32 flex justify-center items-center gap-20 ">
+        <div className="mt-3 flex justify-center h-[100vh] items-center gap-20 ">
             <div className='w-[600px]'>
                 <Lottie animationData={password}></Lottie>
             </div>
-            <div className="w-full max-w-sm p-6   bg-white rounded-lg shadow-md ">
+            <div className="w-full max-w-sm p-6   bg-gray-500 rounded-lg shadow-md ">
             <div className="flex md:ml-10 lg:ml-0  justify-center  items-center">
     <img className=" w-10 lg:w-14" src="https://i.ibb.co/Kyf9ZSH/Logo-removebg-preview.png" alt="" />
     <h1 className="text-xl md:text-4xl  font-ranacho  text-orange-500 drop-shadow-lg font-semibold "> <span className="text-black drop-shadow-lg font-semibold">Food</span> Rescue <span className="text-orange-800 font-semibold">Us</span></h1>

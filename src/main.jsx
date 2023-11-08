@@ -10,6 +10,8 @@ import Login from './assets/User/Login.jsx';
 import Regeister from './assets/User/Regeister.jsx';
 import Home from './assets/Home/Home.jsx';
 import AddFood from './assets/Page/AddFood/AddFood.jsx';
+import Private from './Private/Private.jsx';
+import AvaileableFood from './assets/Page/AvailableFood/AvaileableFood.jsx';
 
 
 const router = createBrowserRouter([
@@ -33,7 +35,10 @@ const router = createBrowserRouter([
       },
       {
         path:"/addfood",
-        element:<AddFood></AddFood>
+        element:<Private><AddFood></AddFood></Private>
+      },{
+        path:"/availeableFood",
+        element:<AvaileableFood></AvaileableFood>
       }
      
         
