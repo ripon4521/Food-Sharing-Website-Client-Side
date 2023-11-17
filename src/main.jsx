@@ -62,7 +62,7 @@ const router = createBrowserRouter([
       },
       {
         path:"/mange/:_id",
-        element:<Private><MangeFoodDetails></MangeFoodDetails></Private>,
+        element:<Private><ViewDetiails></ViewDetiails></Private>,
         loader:({params})=>fetch(`http://localhost:5000/foods/${params._id}`)
       }
       ,{

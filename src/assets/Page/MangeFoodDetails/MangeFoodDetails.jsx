@@ -20,16 +20,16 @@ const MangeFoodDetails = () => {
     </div>
 
     <div className="mt-2">
-        <a href="#" className="text-xl font-bold text-gray-700 dark:text-white hover:text-gray-600 dark:hover:text-gray-200 hover:underline" tabindex="0" role="link">{food_name}</a>
-        <p className="mt-2 text-gray-600 dark:text-gray-300">{additional_notes}</p>
+    <h1 className="text-3xl font-ranacho">Requester Information</h1>
+    <h1 className="text-xl ">Requester Name:</h1>
     </div>
-
+       
     <div className="flex items-center justify-between mt-4">
         <a href="#" className="text-blue-600 dark:text-blue-400 hover:underline" tabindex="0" role="link">Read more</a>
 
         <div className="flex items-center">
-            <img className="hidden object-cover w-10 h-10 mx-4 rounded-full sm:block" src={donator.image} alt="avatar"/>
-            <a className="font-bold text-gray-700 cursor-pointer dark:text-gray-200" tabindex="0" role="link">{donator.name}</a>
+            <img className="hidden object-cover w-10 h-10 mx-4 rounded-full sm:block" src={donator?.image} alt="avatar"/>
+            <a className="font-bold text-gray-700 cursor-pointer dark:text-gray-200" tabindex="0" role="link">{donator?.name}</a>
         </div>
     </div>
 </div>

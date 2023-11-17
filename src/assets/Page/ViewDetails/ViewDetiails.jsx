@@ -1,15 +1,25 @@
 import Lottie from "lottie-react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import aniamton from "../../../../public/Animation - 1700118935954.json"
 import axios from "axios";
 import { useContext } from "react";
 import { AuthContext } from "../../../Auth/AuthProvider";
 import { Helmet } from "react-helmet";
+import moment from 'moment';
+
+
+
 
 
 
 
 const ViewDetiails = () => {
+  // Example code in your JavaScript file
+  const now = moment();
+  const formattedDate = now.format('MMMM Do YYYY, h:mm:ss a');
+  // console.log(formattedDate);
+
+ 
 const loader = useLoaderData()
 const {_id,food_name,donator,food_quantity,pickup_location,expired_date,additional_notes,food_image,view_detail,food_status} =loader;
 
@@ -22,10 +32,24 @@ const divStyle = {
    
   };
 
+
+
+
+ const handleRequest =(e)=>{
+  e.preventDefault();
+ 
+  const form = e.target;
+  
+  const request_date = form.request_date.value;
+  const donation_money = form.donation_money.value;
+  const additional_notes = form.additional_notes.value;
+  
+
   const requstInfo = {
-    donator,pickup_location,expired_date,food_status,email
+    donator,pickup_location,expired_date,email,food_image,request_date,donation_money,additional_notes
   }
- const handleRequest =()=>{
+console.log(requstInfo);
+
         axios.post("http://localhost:5000/foodRequest",requstInfo)
         .then(res=>console.log(res))
         .catch(err=> {
@@ -63,8 +87,123 @@ const divStyle = {
       
    </div>
   
-   <button onClick={handleRequest} className="px-2 mt-3 py-1 text-xs font-bold text-white uppercase transition-colors duration-300 transform bg-gray-800 rounded dark:bg-gray-700 hover:bg-gray-700 dark:hover:bg-gray-600 focus:outline-none focus:bg-gray-700 dark:focus:bg-gray-600">Food Request</button>
+   <button className="bg-green-400 text-white px-2 py-2 mt-4 rounded" onClick={()=>document.getElementById('my_modal_1').showModal()}>Food Request</button>
 </div>
+
+<dialog id="my_modal_1" className="modal">
+  <div className="modal-box">
+    <img src={food_image} alt="" />
+  <div className="max-w-xl mx-auto">
+    <div className="text-center">
+      <h1 className="text-3xl font-bold drop-shadow-lg mt-10 md:text-7xl  font-ranacho text-green-500 dark:text-green">
+     Single Food Details
+      </h1>
+
+      <p className="mt-1 text-green-600 dark:text-green-400">
+  
+      </p>
+    </div>
+
+    <div className="mt-16">
+    
+      <form onSubmit={handleRequest}>
+        <div className="grid gap-4 lg:gap-6">
+ 
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
+
+            <div>
+              <label className="block drop-shadow-lg text-green-500 mb-2 font-roboto ">Food name</label>
+              <input readOnly defaultValue={food_name} name='food_name' type="text" className="block w-full py-3 font-roboto  border rounded-lg px-11 focus:border-green-400 dark:focus:border-green-300 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Write product name here"/>
+            </div>
+
+
+            <div>
+              <label  className="block drop-shadow-lg text-green-500 mb-2 font-roboto">Food Id</label>
+              <input readOnly defaultValue={_id} type="text" name='food_quantity' className="block w-full py-3 font-roboto  border rounded-lg px-11 focus:border-green-400 dark:focus:border-green-300 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Write brand name here"/>
+            </div>
+
+          </div>
+
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
+            <div>
+              <label className="block drop-shadow-lg text-green-500 mb-2 font-roboto ">Food Donator Name</label>
+              <input readOnly  defaultValue={donator.name} name='pickup_location' type="text" className="block w-full py-3 font-roboto  border rounded-lg px-11 focus:border-green-400 dark:focus:border-green-300 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Write product type here"/>
+            </div>
+            <div>
+              <label  className="block drop-shadow-lg text-green-500 mb-2 font-roboto">Food Donator Email</label>
+              <input readOnly defaultValue={user?.email} name='food_image' type="text" className="block w-full  py-3 font-roboto  border rounded-lg px-11 focus:border-green-400 dark:focus:border-green-300 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Write product photo url here"/>
+            </div>
+        
+          </div>
+
+
+
+
+           
+
+         
+           
+     
+          
+
+     
+      
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
+            <div>
+              <label className="block drop-shadow-lg text-green-500 mb-2 font-roboto ">Expired Date</label>
+              <input readOnly defaultValue={expired_date} name='expired_date' type="text" className="block w-full py-3 font-roboto  border rounded-lg px-11 focus:border-green-400 dark:focus:border-green-300 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Write product price here"/>
+            </div>
+            <div>
+              <label className="block drop-shadow-lg text-green-500 mb-2 font-roboto ">Request  Date</label>
+              <input readOnly defaultValue={formattedDate} name='request_date' type="text" className="block w-full py-3 font-roboto  border rounded-lg px-11 focus:border-green-400 dark:focus:border-green-300 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Write product price here"/>
+            </div>
+            
+            <div>
+              <label  className="block drop-shadow-lg text-green-500 mb-2 font-roboto">Pickup Location</label>
+              <input readOnly defaultValue={pickup_location}  name='status' type="text" className="block w-full py-3 font-roboto  border rounded-lg px-11 focus:border-green-400 dark:focus:border-green-300 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Write product rating here"/>
+            </div>
+            
+
+           
+          </div>
+          <div>
+              <label  className="block drop-shadow-lg text-green-500 mb-2 font-roboto">Donation Money</label>
+              <input   name='donation_money' type="text" className="block w-full py-3 font-roboto  border rounded-lg px-11 focus:border-green-400 dark:focus:border-green-300 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Donate money Here"/>
+            </div>
+     
+        
+        
+
+
+<div>
+<div>
+              <label  className="block drop-shadow-lg text-green-500 mb-2 font-roboto">Additional Notes</label>
+              <input defaultValue={additional_notes} name='additional_notes' type="text" className="block h-20 w-full py-3 font-roboto  border rounded-lg px-11 focus:border-green-400 dark:focus:border-green-300 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Write product description"/>
+            </div>
+</div>
+
+        </div>
+      
+
+        <div className="mt-6 grid">
+          <button  type="submit" className="inline-flex justify-center items-center gap-x-3 text-center bg-green-600 hover:bg-green-700 border border-transparent text-sm lg:text-base text-white font-roboto drop-shadow-lg font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2 focus:ring-offset-white transition py-3 px-4 dark:focus:ring-offset-green-800">Food Request</button>
+        </div>
+
+      
+      </form>
+   
+    </div>
+  </div>
+    <div className="modal-action">
+      <form method="dialog">
+        {/* if there is a button in form, it will close the modal */}
+        <button className="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
 </div>
 
    </div>

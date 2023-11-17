@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DataTable from "react-data-table-component";
 import { Link } from "react-router-dom";
 
@@ -13,10 +13,32 @@ const FoodRequest = () => {
     // console.log(loader);
 
     useEffect(()=>{
-        axios.get('http://localhost:5000/foods')
+        axios.get('http://localhost:5000/foodRequest')
         .then(res=>setData(res.data))
         .catch(err=> console.log(err))
     },[])
+
+
+    const handleDelte=(_id)=>{
+      fetch(`http://localhost:5000/foodRequest/${_id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ status: 'Delivered' }),
+      })
+      .then(response => response.json())
+      .then(da => {
+        // Update the frontend status
+        document.getElementById('status').innerText = da.status;
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+    
+
+window.location.reload()
+}
 
 
   const cloumns =[
@@ -24,12 +46,12 @@ const FoodRequest = () => {
         name:'Food Image',
         selector:(row) => <img width={50} height={50} src={row.food_image}></img>
     },{
-        name:'Food Name',
-        selector:row => row.food_name
+        name:'Donar Name',
+        selector:row => row.donator?.name
     },
     {
-        name:'Quentity',
-        selector:row => row.food_quantity
+        name:'Pickup Location',
+        selector:row => row.pickup_location
     },
        {
         name:'Expried Date',
@@ -41,9 +63,9 @@ const FoodRequest = () => {
        {
         name:'Action',
         cell:(row) => <div className="flex gap-4 ">
-            <Link to={`/updateFood/${row._id}`}   className="px-2 py-1 bg-green-500 text-white rounded">Update</Link>
-            <button onClick={()=>(row._id)}  className="px-2 py-1 bg-green-500 text-white rounded">Delete</button>
-            <Link to={`/mange/${row._id}`} className="px-2 py-1 bg-green-500 text-white rounded">Mange</Link>
+            <Link id="status"  className="px-2 py-1 bg-orange-500 text-white rounded">{row.food_status}</Link>
+            <button onClick={()=>handleDelte(row._id)} className="px-2 py-1 bg-orange-500 text-white rounded">Cancel Request</button>
+           
         </div>
        }
 
