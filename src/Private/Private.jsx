@@ -18,6 +18,7 @@ const Private = ({children}) => {
 
         </div>
     }
+
     if (user) {
         return children;
     }

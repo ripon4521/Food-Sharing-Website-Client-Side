@@ -7,11 +7,11 @@ const Banner = () => {
     return (
         <div className='flex justify-center flex-col-reverse md:flex-row  mt-10  items-center'>
             <div>
-            <h1 className='lg:text-9xl md:text-7xl text-6xl font-ranacho drop-shadow-lg text-gray-500'>BE THE RESCUE.</h1>
-            <p className='lg:text-5xl md:text-5xl text-4xl text-green-500 font-ranacho font-black drop-shadow-lg'>Fight hunger. help the planet.</p>
+            <h1 className='lg:text-9xl md:text-7xl text-6xl font-ranacho drop-shadow-lg text-green-500'>BE THE RESCUE.</h1>
+            <p className='lg:text-5xl md:text-5xl text-4xl  font-ranacho font-black drop-shadow-lg'>Fight hunger. help the planet.</p>
 
             <div>
-                <button className='px-3 py-3 bg-green-500 mt-2 font-popins font-bold rounded drop-shadow-lg  text-white'>Become a Voluntier</button>
+                <button className='px-3 py-3 bg-green-500 text-white mt-4 font-popins font-bold rounded drop-shadow-lg  '>Become a Voluntier</button>
             </div>
             </div>
             <div className='w-[500px] md:w-[800px]'>

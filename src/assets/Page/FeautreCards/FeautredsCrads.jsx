@@ -27,7 +27,7 @@ const FeautredsCrads = ({food}) => {
     <div className="flex items-center px-6 py-3 bg-green-500">
        
 
-        <h1 className="mx-3 text-lg font-semibold ">{food_name}</h1>
+        <h1 className="mx-3 text-lg text-white font-semibold ">{food_name}</h1>
     </div>
 
     <div className="px-6 py-4">

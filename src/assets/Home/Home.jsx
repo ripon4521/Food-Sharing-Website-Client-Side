@@ -3,10 +3,22 @@ import {  useEffect, useState } from "react";
 import axios from "axios";
 import FeautredsCrads from "../Page/FeautreCards/FeautredsCrads";
 import Banner from "../Page/Banner/Banner";
-// import { useLoaderData } from "react-router-dom";
 
+// import { useLoaderData } from "react-router-dom";
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+import Atilin from "../Page/Atilin/Atilin";
+import Mobileapp from "../Page/MobileApp/Mobileapp";
 
 const Home = () => {
+    useEffect(()=>{
+        Aos.init( {duration:"500", delay:"500"})
+      }, [])
+    
+
+
+
+
     const [data ,setData]=useState([]);
 
 
@@ -37,7 +49,7 @@ const foodSortedQuentity = data.sort((a, b) => b.food_quantity - a.food_quantity
               </div>
               <h1 className=" drop-shadow-lg pl-6 w-full md:w-[50%] lg:w-[20%] mx-auto text-center my-10 border-b-4 border-orange-500  font-ranacho text-7xl text-gray-500">Featured <span className="text-orange-500">Foods</span></h1>
 
-           <div className="grid  grid-cols-1 pl-10 md:p-5 lg:p-0 md:grid-cols-2 lg:grid-cols-3  container mx-auto gap-20" >
+           <div data-aos="fade-up" className="grid  grid-cols-1 pl-10 md:p-5 lg:p-0 md:grid-cols-2 lg:grid-cols-3  container mx-auto gap-20" >
 
            
 
@@ -48,6 +60,15 @@ const foodSortedQuentity = data.sort((a, b) => b.food_quantity - a.food_quantity
 }
    
            </div>
+
+           <div>
+          <Atilin></Atilin>
+          </div>
+
+<div>
+  <Mobileapp></Mobileapp>
+</div>
+          
         </div>
     );
 };

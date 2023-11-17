@@ -81,9 +81,9 @@ axios.post('http://localhost:5000/foods',newProduct)
 
 
     return (
-        <div className=' h-screen'>
+        <div className=' '>
    
-<div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14  mx-auto">
+<div className="  max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14  mx-auto">
   <div className="max-w-xl mx-auto">
     <div className="text-center">
       <h1 className="text-3xl font-bold drop-shadow-lg mt-10 md:text-7xl  font-ranacho text-green-500 dark:text-green">

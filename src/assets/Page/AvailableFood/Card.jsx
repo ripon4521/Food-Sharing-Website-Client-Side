@@ -1,28 +1,29 @@
 
 import { FcExpired } from 'react-icons/fc';
+import { Link } from 'react-router-dom';
 const Card = ({food}) => {
 
     
 const {_id,food_name,donator,food_quantity,pickup_location,expired_date,additional_notes,food_image,view_detail} =food;
     return (
-        <div>
-                 <div>
-            <div className="w-full max-w-sm overflow-hidden h-[600px]  rounded-lg shadow-lg dark:bg-gray-800">
+      
+                
+            <div className="w-full  max-w-sm overflow-hidden h-[600px]  rounded-lg shadow-lg dark:bg-gray-800">
     <img className="object-cover object-center w-full h-56" src={food_image} alt="avatar"/>
 
     <div className="flex items-center px-6 py-3 bg-green-900">
        
 
-        <h1 className="mx-3 text-lg font-semibold ">{food_name}</h1>
+        <h1 className="mx-3 text-lg text-white font-semibold ">{food_name}</h1>
     </div>
 
-    <div className="px-6 py-4">
+    <div className="px-6  py-4">
       <div className="flex items-center gap-5 ">
       <img className="w-[50px] h-[50px] rounded-full border-4 " src={donator?.image} alt="" />
           <h1 className="text-xl font-roboto  font-semibold drop-shadow-lg  dark:text-white">{donator?.name}</h1>
 
       </div>
-        <p className="py-2 drop-shadow-lg text-xl  font-roboto hover:text-green-500 dark:text-gray-400">{additional_notes}</p>
+        <p className="py-2  drop-shadow-lg text-xl  font-roboto hover:text-green-500 dark:text-gray-400">{additional_notes}</p>
 
         <div className="flex items-center mt-4   dark:text-gray-200">
             <svg aria-label="suitcase icon" className="w-6  hover:text-green-500 h-6 fill-current" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -46,11 +47,10 @@ const {_id,food_name,donator,food_quantity,pickup_location,expired_date,addition
           <FcExpired className='text-2xl text-black hover:text-green-500'>  </FcExpired>
           <h1 className="px-2 hover:text-green-500 text-sm">{expired_date}</h1>
         </div>
-        <button className='bg-green-500 font-bold px-2 py-2 mt-2 rounded w-full'>View Details</button>
+    <Link to={`/viewDetails/${_id}`}>    <button className='bg-green-500 font-bold px-2 py-2 mt-2 rounded w-full'>View Details</button></Link>
     </div>
 </div>
-        </div>
-        </div>
+
     );
 };
 
