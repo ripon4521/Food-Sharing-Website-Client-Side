@@ -6,12 +6,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBpuBb7-qUisWhEk0upV6-xVPFyPvOz3WY",
-  authDomain: "food-rescue-us.firebaseapp.com",
-  projectId: "food-rescue-us",
-  storageBucket: "food-rescue-us.appspot.com",
-  messagingSenderId: "263577043617",
-  appId: "1:263577043617:web:f5214534536263f4f226e0"
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId
 };
 
 // Initialize Firebase

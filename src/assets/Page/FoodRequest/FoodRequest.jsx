@@ -1,7 +1,8 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import DataTable from "react-data-table-component";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../Auth/AuthProvider";
 
 
 
@@ -11,31 +12,22 @@ const FoodRequest = () => {
   const [data,setData]=useState([]);
     // const loader = useLoaderData();
     // console.log(loader);
+    const {user}=useContext(AuthContext)
+   
 
     useEffect(()=>{
         axios.get('http://localhost:5000/foodRequest')
         .then(res=>setData(res.data))
         .catch(err=> console.log(err))
     },[])
+    console.log(data);
+    const filter = data.filter(item => item.email == user?.email);
 
 
     const handleDelte=(_id)=>{
-      fetch(`http://localhost:5000/foodRequest/${_id}`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ status: 'Delivered' }),
-      })
-      .then(response => response.json())
-      .then(da => {
-        // Update the frontend status
-        document.getElementById('status').innerText = da.status;
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
-    
+ axios.delete(`http://localhost:5000/foodRequest/${_id}`)
+    .then(res=>console.log(res))
+    .catch(err=> console.log(err))
 
 window.location.reload()
 }
@@ -63,9 +55,9 @@ window.location.reload()
        {
         name:'Action',
         cell:(row) => <div className="flex gap-4 ">
-            <Link id="status"  className="px-2 py-1 bg-orange-500 text-white rounded">{row.food_status}</Link>
-            <button onClick={()=>handleDelte(row._id)} className="px-2 py-1 bg-orange-500 text-white rounded">Cancel Request</button>
-           
+            <Link   className="px-2 py-1 bg-orange-500 text-white rounded">Availeable</Link>
+            <button onClick={()=>handleDelte(row._id)}  className="px-2 py-1 bg-orange-500 text-white rounded">Cancel Request</button>
+            {/* onClick={()=>handleDelte(row._id)} */}
         </div>
        }
 
@@ -78,7 +70,7 @@ window.location.reload()
             <h1 className="text-center text-7xl my-20 font-ranacho text-gray-400 drop-shadow-lg">Mange My Food</h1>
             <DataTable
             columns={cloumns}
-            data={data}
+            data={filter}
             className=""
           >
             
