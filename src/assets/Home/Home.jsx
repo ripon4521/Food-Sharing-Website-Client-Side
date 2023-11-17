@@ -9,6 +9,7 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 import Atilin from "../Page/Atilin/Atilin";
 import Mobileapp from "../Page/MobileApp/Mobileapp";
+import { Helmet } from "react-helmet";
 
 const Home = () => {
     useEffect(()=>{
@@ -43,6 +44,9 @@ const foodSortedQuentity = data.sort((a, b) => b.food_quantity - a.food_quantity
 
     return (
         <div>
+          <Helmet>
+            <title>Food Rescue||Home</title>
+          </Helmet>
      
               <div>
                 <Banner></Banner>

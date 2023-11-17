@@ -5,6 +5,7 @@ import { AuthContext } from "../../../Auth/AuthProvider";
 
 import Swal from "sweetalert2";
 import axios from "axios";
+import { Helmet } from "react-helmet";
 
 
 
@@ -101,6 +102,9 @@ console.log(updateProduct);
 // const {_id,food_name,donator,food_quantity,pickup_location,expired_date,additional_notes,food_image,view_detail} =food;
     return (
       <div className=' '>
+        <Helmet>
+          <title>Mange||Update</title>
+        </Helmet>
    
       <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14  mx-auto">
         <div className="max-w-xl mx-auto">

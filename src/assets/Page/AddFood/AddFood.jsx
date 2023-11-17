@@ -4,6 +4,7 @@ import Swal from 'sweetalert2';
 import { useContext } from "react";
 import { AuthContext } from "../../../Auth/AuthProvider";
 import axios from "axios";
+import { Helmet } from 'react-helmet';
 
 
 
@@ -82,6 +83,9 @@ axios.post('http://localhost:5000/foods',newProduct)
 
     return (
         <div className=' '>
+          <Helmet>
+            <title>Home||Add Food</title>
+          </Helmet>
    
 <div className="  max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14  mx-auto">
   <div className="max-w-xl mx-auto">
