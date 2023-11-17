@@ -16,6 +16,7 @@ import MangeFood from './assets/Page/MangeFood/MangeFood.jsx';
 import UpdateFood from './assets/Page/UpdateFood/UpdateFood.jsx';
 import ViewDetiails from './assets/Page/ViewDetails/ViewDetiails.jsx';
 import MangeFoodDetails from './assets/Page/MangeFoodDetails/MangeFoodDetails.jsx';
+import FoodRequest from './assets/Page/FoodRequest/FoodRequest.jsx';
 
 
 const router = createBrowserRouter([
@@ -64,7 +65,10 @@ const router = createBrowserRouter([
         element:<Private><MangeFoodDetails></MangeFoodDetails></Private>,
         loader:({params})=>fetch(`http://localhost:5000/foods/${params._id}`)
       }
-
+      ,{
+        path:"/foodRequest",
+        element:<FoodRequest></FoodRequest>
+      }
      
         
   

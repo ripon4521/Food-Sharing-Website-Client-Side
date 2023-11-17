@@ -33,7 +33,7 @@ const Navbar = () => {
         <Link to="/availeableFood" className=" font-popins  hover:text-green-500 font-semibold drop-shadow-lg"><a>Available Foods</a></Link> 
         <Link to="/addfood"  className=" font-popins hover:text-green-500 font-semibold drop-shadow-lg"><a>Add Food</a></Link>
           <Link to='/mangeFood' className=" font-popins  hover:text-green-500 font-semibold drop-shadow-lg"><a>Manage My Foods</a></Link>
-          <Link className=" font-popins  hover:text-green-500 font-semibold drop-shadow-lg"><a>My Food Request</a></Link>
+          <Link to="/foodRequest" className=" font-popins  hover:text-green-500 font-semibold drop-shadow-lg"><a>My Food Request</a></Link>
         </div>: 
         <div className="flex  flex-col md:flex-col lg:flex-row gap-8 ">
         <Link className=" font-popins hover:text-green-500 font-semibold drop-shadow-lg"><a>Home</a></Link>
