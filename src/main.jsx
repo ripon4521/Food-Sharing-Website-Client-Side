@@ -15,15 +15,16 @@ import AvaileableFood from './assets/Page/AvailableFood/AvaileableFood.jsx';
 import MangeFood from './assets/Page/MangeFood/MangeFood.jsx';
 import UpdateFood from './assets/Page/UpdateFood/UpdateFood.jsx';
 import ViewDetiails from './assets/Page/ViewDetails/ViewDetiails.jsx';
-import MangeFoodDetails from './assets/Page/MangeFoodDetails/MangeFoodDetails.jsx';
+
 import FoodRequest from './assets/Page/FoodRequest/FoodRequest.jsx';
+import Error from './assets/Page/Error/Error.jsx';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element:<App></App>,
-    // errorElement: <ErrorPage />,
+    errorElement: <Error></Error>,
     // loader: rootLoader,
     children: [
       {
