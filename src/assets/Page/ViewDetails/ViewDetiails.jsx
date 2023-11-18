@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../../Auth/AuthProvider";
 import { Helmet } from "react-helmet";
 import moment from 'moment';
+import Swal from "sweetalert2";
 
 
 
@@ -50,10 +51,20 @@ const divStyle = {
   }
 console.log(requstInfo);
 
-        axios.post("http://localhost:5000/foodRequest",requstInfo)
-        .then(res=>console.log(res))
+        axios.post("https://assignment-server-side-fawn.vercel.app/foodRequest",requstInfo)
+        .then(res=>{
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Your Food Add SuccesFully !',
+            showConfirmButton: false,
+            timer: 1500
+          })
+        console.log(res);
+        })
         .catch(err=> {
-            alert('succesfully added')
+    
+            
             console.log(err)
         })
  }

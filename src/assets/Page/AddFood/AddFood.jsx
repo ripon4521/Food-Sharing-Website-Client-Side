@@ -56,7 +56,7 @@ const newProduct = {
 }
 console.log(newProduct);
 
-axios.post('http://localhost:5000/foods',newProduct)
+axios.post('https://assignment-server-side-fawn.vercel.app/foods',newProduct)
 .then(res=> {
   console.log(res);
 

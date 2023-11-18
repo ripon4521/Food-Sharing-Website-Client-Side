@@ -3,6 +3,11 @@ import { useContext, useEffect, useState } from "react";
 import DataTable from "react-data-table-component";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Auth/AuthProvider";
+import 'react-toastify/dist/ReactToastify.css';
+
+
+import { ToastContainer, toast } from 'react-toastify';
+import Swal from "sweetalert2";
 
 
 
@@ -16,7 +21,7 @@ const FoodRequest = () => {
    
 
     useEffect(()=>{
-        axios.get('http://localhost:5000/foodRequest')
+        axios.get('https://assignment-server-side-fawn.vercel.app/foodRequest')
         .then(res=>setData(res.data))
         .catch(err=> console.log(err))
     },[])
@@ -25,9 +30,23 @@ const FoodRequest = () => {
 
 
     const handleDelte=(_id)=>{
- axios.delete(`http://localhost:5000/foodRequest/${_id}`)
-    .then(res=>console.log(res))
-    .catch(err=> console.log(err))
+ axios.delete(`https://assignment-server-side-fawn.vercel.app/foodRequest/${_id}`)
+    .then(res=>
+      {
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Your Food Add SuccesFully !',
+          showConfirmButton: false,
+          timer: 1500
+        })
+        console.log(res)
+      }
+      )
+    .catch(err=> {
+      toast.warning(err.message)
+      console.log(err)
+    })
 
 window.location.reload()
 }
@@ -76,6 +95,7 @@ window.location.reload()
             
                 
             </DataTable>
+            <ToastContainer></ToastContainer>
         </div>
     </div>
   );

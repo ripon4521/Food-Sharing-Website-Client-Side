@@ -34,7 +34,7 @@ const router = createBrowserRouter([
       },{
         path:"/viewDetails/:_id",
         element:<ViewDetiails></ViewDetiails>,
-        loader:({params})=>fetch(`http://localhost:5000/foods/${params._id}`)
+        loader:({params})=>fetch(`https://assignment-server-side-fawn.vercel.app/foods/${params._id}`)
         
       },
       {
@@ -58,13 +58,13 @@ const router = createBrowserRouter([
       },{
         path:"/updateFood/:_id",
         element:<Private><UpdateFood></UpdateFood></Private>,
-        loader:({params})=>fetch(`http://localhost:5000/foods/${params._id}`)
+        loader:({params})=>fetch(`https://assignment-server-side-fawn.vercel.app/foods/${params._id}`)
        
       },
       {
         path:"/mange/:_id",
         element:<Private><ViewDetiails></ViewDetiails></Private>,
-        loader:({params})=>fetch(`http://localhost:5000/foods/${params._id}`)
+        loader:({params})=>fetch(`https://assignment-server-side-fawn.vercel.app/foods/${params._id}`)
       }
       ,{
         path:"/foodRequest",

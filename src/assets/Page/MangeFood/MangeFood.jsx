@@ -10,7 +10,7 @@ const MangeFood = () => {
     // console.log(loader);
 
     useEffect(()=>{
-        axios.get('http://localhost:5000/foods')
+        axios.get('https://assignment-server-side-fawn.vercel.app/foods')
         .then(res=>setData(res.data))
         .catch(err=> console.log(err))
     },[])
@@ -20,7 +20,7 @@ const MangeFood = () => {
 
            
     const handleDelte=(_id)=>{
-                    axios.delete(`http://localhost:5000/foods/${_id}`)
+                    axios.delete(`https://assignment-server-side-fawn.vercel.app/foods/${_id}`)
                     .then(res=>console.log(res))
         .catch(err=> console.log(err))
     

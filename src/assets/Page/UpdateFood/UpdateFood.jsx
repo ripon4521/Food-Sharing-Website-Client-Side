@@ -69,7 +69,7 @@ console.log(updateProduct);
 
 // console.log(newProduct);
 
-    fetch(`http://localhost:5000/foods/${_id}`,{
+    fetch(`https://assignment-server-side-fawn.vercel.app/foods/${_id}`,{
         method:"PUT",
         headers:{
             "content-type":"application/json"
@@ -80,7 +80,7 @@ console.log(updateProduct);
     
     .then(res=>res.json())
     .then(data => {
-        console.log(data)
+        
         if (data. modifiedCount > 0) {
             Swal.fire({
                 position: 'top-end',
@@ -89,6 +89,7 @@ console.log(updateProduct);
                 showConfirmButton: false,
                 timer: 1500
               })
+              console.log(data)
 
            
         }

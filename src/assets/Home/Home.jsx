@@ -26,7 +26,7 @@ const Home = () => {
 
 useEffect(()=>{
 
-    axios.get('http://localhost:5000/foods')
+    axios.get('https://assignment-server-side-fawn.vercel.app/foods')
     .then(
         response=>{
           setData(response.data);
@@ -37,7 +37,7 @@ useEffect(()=>{
     })
 
 },[])
-
+console.log(data);
 const foodSortedQuentity = data.sort((a, b) => b.food_quantity - a.food_quantity);
 // console.log(booksSortedByYearAsc);
 // console.log(data);

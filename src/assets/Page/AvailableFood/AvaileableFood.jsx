@@ -45,7 +45,7 @@ const AvaileableFood = () => {
     // const {loading,user}=useContext(AuthContext)
     const [foods,setFoods]=useState([])
     useEffect(()=>{
-        axios.get('http://localhost:5000/aviableFood')
+        axios.get('https://assignment-server-side-fawn.vercel.app/aviableFood')
         .then(res=>setFoods(res.data))
         .catch(err=> console.log(err))
     },[])
